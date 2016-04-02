@@ -1,0 +1,28 @@
+{
+  "name": "sass-vars-to-js",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XOP/sass-vars-to-js.git"
+  },
+  "keywords": [
+    "sass",
+    "variables",
+    "parser",
+    "js"
+  ],
+  "author": "Evgeny Khoroshilov <stewiekillsloiss@gmail.com> (https://github.com/XOP)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XOP/sass-vars-to-js/issues"
+  },
+  "homepage": "https://github.com/XOP/sass-vars-to-js#readme"
+}

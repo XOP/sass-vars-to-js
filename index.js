@@ -10,13 +10,25 @@ function sassVars (filePath) {
     sassFile = sassFile.split('\n');
 
     sassFile.map(line => {
+        console.log('=================');
+        console.log('LOG line: ' + line);
+
         if (~line.indexOf('$')) {
 
             // parsing string
             // $property: val;
             var properties = line.match(/(?:\$)([\w-]+)(?:\:)(?:\s)+(.+)(?:\;)/);
+            console.log('LOG properties: ' + properties);
+
+            if (!properties) {
+                return;
+            }
+
             var key = properties[1];
+            console.log('LOG key: ' + key);
+
             var val = properties[2];
+            console.log('LOG val: ' + val);
 
             // there's variable used in value
             // have to parse the value as well

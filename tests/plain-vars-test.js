@@ -1,19 +1,19 @@
+var TEST_NAME = 'plain-vars';
+
 var path = require('path');
 
 var test = require('tape');
 var converter = require('../sass-vars-to.js').default;
 
-test('parsing plain vars', function (t) {
+test(TEST_NAME, function (t) {
 
-    var sassFilePath = path.resolve(__dirname, 'plain-vars.scss');
+    var sassFilePath = path.resolve(__dirname, TEST_NAME + '.scss');
     var result = converter(sassFilePath);
-
-    console.log(result.color);
 
     t.ok(
         result,
 
-        'parsing is ok'
+        'should get result'
     );
 
     t.equal(

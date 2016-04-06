@@ -1,0 +1,18 @@
+/* block comment here */
+$color: #fff;
+
+/*
+    Multiple line block comment
+    Even with special symbol $
+*/
+$color-rgba: rgba(255,255,255,1);
+
+// Inline comment
+$font: Arial, 'Helvetica Neue', sans-serif;
+
+// Multiline
+// Inline comment
+$font-size: 1.8em;
+
+$line-height-regular: 1; /* block comment on the line */
+$line-height-loose: 2; // inline comment on the line

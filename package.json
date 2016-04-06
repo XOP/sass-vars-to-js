@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel index.js -o sass-vars-to.js",
-    "test": "node tests/tests.js"
+    "test": "node tests"
   },
   "repository": {
     "type": "git",

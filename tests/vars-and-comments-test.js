@@ -1,4 +1,4 @@
-var TEST_NAME = 'vars-and-stuff';
+var TEST_NAME = 'vars-and-comments';
 
 var path = require('path');
 

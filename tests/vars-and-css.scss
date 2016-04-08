@@ -1,0 +1,33 @@
+/* Variables */
+
+$color: #fff;
+$color-rgba: rgba(255,255,255,1);
+
+.foo {
+    color: $color;
+    font-size: $font-size;
+}
+
+.bar {
+    color: black;
+
+    @media print {
+        color: $color-rgba;
+    }
+}
+
+
+/* More variables */
+
+$font: Arial, 'Helvetica Neue', sans-serif;
+$font-size: 1.8em;
+
+.foo {
+    font-size: $font-size;
+
+    .bar {
+        & + .baz {
+            font: $font;
+        }
+    }
+}

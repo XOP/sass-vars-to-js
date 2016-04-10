@@ -20,24 +20,27 @@ function sassVars (filePath) {
 
             // parsing string
             // $property: val;
-            var properties = line.match(declarationRegexp);
+            const properties = line.match(declarationRegexp);
             console.log('LOG properties: ' + properties);
 
             if (!properties) {
                 return;
             }
 
-            var key = properties[1];
+            const key = properties[1];
             console.log('LOG key: ' + key);
 
-            var val = properties[2];
+            let val = properties[2];
             console.log('LOG val: ' + val);
+
+            // trim extra spaces
+            val = val.trim();
 
             // there's variable used in value
             // have to parse the value as well
             if (~val.indexOf('$')) {
-                var innerVar = val.match(variableRegexp)[1];
-                var innerVarValue = vars[innerVar];
+                const innerVar = val.match(variableRegexp)[1];
+                const innerVarValue = vars[innerVar];
 
                 val = val.replace('$' + innerVar, innerVarValue);
             }

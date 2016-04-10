@@ -109,21 +109,21 @@ test(TEST_NAME, function (t) {
 
     t.equal(
         result['offset-l'],
-        '1rem',
+        '2rem',
 
         'should get value with syntax: ;[var]: [value]'
     );
 
     t.equal(
         result['offset-xl'],
-        '2rem',
+        '3rem',
 
         'should get value with syntax: ; [var]: [value]'
     );
 
     t.equal(
         result['offset-xxl'],
-        '3rem',
+        '4rem',
 
         'should get value with syntax: [space]; [var]: [value]'
     );

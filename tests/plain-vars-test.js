@@ -24,6 +24,13 @@ test(TEST_NAME, function (t) {
     );
 
     t.equal(
+        result.margin,
+        '10px auto 20px',
+
+        'should get value with spaces and not stringified'
+    );
+
+    t.equal(
         result['color-rgba'],
         'rgba(255,255,255,1)',
 
@@ -126,6 +133,13 @@ test(TEST_NAME, function (t) {
         '4rem',
 
         'should get value with syntax: [space]; [var]: [value]'
+    );
+
+    t.equal(
+        result['page-offset'],
+        '20px',
+
+        'should get value with mixed syntax of newlines spaces and tabs'
     );
 
     t.end();

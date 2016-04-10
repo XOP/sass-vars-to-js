@@ -4,6 +4,9 @@ import fs from 'fs';
 import strip from 'strip-comments';
 
 function sassVars (filePath) {
+    const declarationRegexp = new RegExp(/(?:\$)([\w-]+)(?:\:)(?:\s)+(.+)(?:\;)/);
+    const variableRegexp = new RegExp(/(?:\$)([\w-]+)(?:[\s\;]*)/);
+
     let sassFile = fs.readFileSync(filePath, 'utf8');
     let vars = {};
 
@@ -17,7 +20,7 @@ function sassVars (filePath) {
 
             // parsing string
             // $property: val;
-            var properties = line.match(/(?:\$)([\w-]+)(?:\:)(?:\s)+(.+)(?:\;)/);
+            var properties = line.match(declarationRegexp);
             console.log('LOG properties: ' + properties);
 
             if (!properties) {
@@ -33,7 +36,7 @@ function sassVars (filePath) {
             // there's variable used in value
             // have to parse the value as well
             if (~val.indexOf('$')) {
-                var innerVar = val.match(/(?:\$)([\w-]+)(?:[\s\;]*)/)[1];
+                var innerVar = val.match(variableRegexp)[1];
                 var innerVarValue = vars[innerVar];
 
                 val = val.replace('$' + innerVar, innerVarValue);

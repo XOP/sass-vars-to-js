@@ -1,8 +1,6 @@
 import path from 'path';
 import fs from 'fs';
 
-import strip from 'strip-comments';
-
 function sassVars (filePath) {
     const declarationRegexp = new RegExp(/(?:\$)([\w-]+)(?:\:)(?:\s)+(.+)(?:\;)/);
     const variableRegexp = new RegExp(/(?:\$)([\w-]+)(?:[\s\;]*)/);

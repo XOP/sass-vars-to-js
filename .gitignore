@@ -4,4 +4,7 @@ node_modules
 *.log
 
 # compiled to ES5
-sass-vars-to.js
+/compiled
+
+# temp files
+_tmp

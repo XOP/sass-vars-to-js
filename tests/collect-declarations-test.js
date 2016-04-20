@@ -1,14 +1,14 @@
-var TEST_NAME = 'declarations';
+var TEST_NAME = 'collect-declarations';
 
 var path = require('path');
 
 var test = require('tape');
-var converter = require('../index.js').default;
+var collectDeclarations = require('../compiled/_collect-declarations.js').default;
 
 test(TEST_NAME, function (t) {
 
-    var sassFilePath = path.resolve(__dirname, TEST_NAME + '.scss');
-    var result = converter(sassFilePath);
+    var sassFilePath = path.resolve(__dirname, 'plain-vars.scss');
+    var result = collectDeclarations(sassFilePath);
 
     t.ok(
         result,

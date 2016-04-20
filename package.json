@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --out-dir compiled",
+    "build": "rm compiled/* && babel src --out-dir compiled",
     "test": "node tests"
   },
   "repository": {

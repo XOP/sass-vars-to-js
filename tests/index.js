@@ -1,5 +1,5 @@
-require('./declarations-test');
+require('./collect-declarations-test');
 
-//require('./plain-vars-test');
-//require('./vars-and-comments-test');
-//require('./vars-and-css-test');
+require('./plain-vars-test');
+require('./vars-and-comments-test');
+require('./vars-and-css-test');

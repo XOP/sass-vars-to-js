@@ -1,15 +1,19 @@
 import path from 'path';
 import fs from 'fs';
 
-import getFileLines from './_get-file-lines.js';
+import collectDeclarations from './_collect-declarations';
 
 function sassVars (filePath) {
-    const declarationRegexp = new RegExp(/(?:\$)([\w-]+)(?:\:)(?:\s)+(.+)(?:\;)/);
-    const variableRegexp = new RegExp(/(?:\$)([\w-]+)(?:[\s\;]*)/);
+    const declarations = collectDeclarations(filePath);
 
-    const sassFileLines = getFileLines(filePath);
+    console.log(declarations);
 
-    let vars = {};
+    return declarations;
+
+    /*
+     const variableRegexp = new RegExp(/(?:\$)([\w-]+)(?:[\s\;]*)/);
+
+     let vars = {};
 
     sassFileLines.map(line => {
         console.log('=================');
@@ -49,6 +53,8 @@ function sassVars (filePath) {
     });
 
     return vars;
+
+     */
 }
 
 export default sassVars;

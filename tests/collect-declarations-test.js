@@ -3,7 +3,7 @@ var TEST_NAME = 'collect-declarations';
 var path = require('path');
 
 var test = require('tape');
-var collectDeclarations = require('../compiled/_collect-declarations.js').default;
+var collectDeclarations = require('../dist/_collect-declarations.js');
 
 test(TEST_NAME, function (t) {
 

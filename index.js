@@ -1,3 +1,3 @@
-var sassToVars = require('./compiled');
+var sassToVars = require('./dist');
 
 module.exports = sassToVars;

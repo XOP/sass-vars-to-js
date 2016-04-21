@@ -3,7 +3,7 @@ var TEST_NAME = 'plain-vars';
 var path = require('path');
 
 var test = require('tape');
-var converter = require('../index.js').default;
+var converter = require('../index.js');
 
 test(TEST_NAME, function (t) {
 

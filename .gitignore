@@ -4,7 +4,4 @@ node_modules
 *.log
 
 # compiled to ES5
-/compiled
-
-# temp files
-_tmp
+/dist

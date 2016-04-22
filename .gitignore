@@ -1,7 +1,5 @@
 # environment
+
 node_modules
 .idea
 *.log
-
-# compiled to ES5
-/dist

@@ -1,2 +1,5 @@
 # should override .gitignore
 # to publish dist directory
+
+.idea
+*.log

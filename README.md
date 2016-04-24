@@ -1,5 +1,7 @@
 # sass-vars-to-js
 
+[![npm version](https://badge.fury.io/js/sass-vars-to-js.svg)](https://badge.fury.io/js/sass-vars-to-js) [![npm dependencies](https://david-dm.org/stewiekillsloiss/sass-vars-to-js.svg)](https://david-dm.org/stewiekillsloiss/sass-vars-to-js)
+
 ## About
 
 Sometimes you just need to use SASS variables in JS without incorporating complex logic.
@@ -67,7 +69,7 @@ const colors = {
 
 ## Limits of use
 
-Please be aware of current version (1.x) limitations:
+Please be aware of current version (0.x - 1.x) limitations:
 
 - maps and other complex stuff is not supported
 - variables in variables not supported

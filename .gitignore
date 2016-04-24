@@ -3,3 +3,7 @@
 node_modules
 .idea
 *.log
+
+# compilation
+
+/dist

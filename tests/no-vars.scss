@@ -1,0 +1,20 @@
+// there are no vars here
+// only comments and css code
+
+.foo {
+    color: $color;
+    font-size: $font-size;
+}
+
+/*
+    Multiple line block comment
+    Even with special symbol $
+*/
+
+.bar {
+    color: black;
+
+    @media print {
+        color: $color-rgba;
+    }
+}

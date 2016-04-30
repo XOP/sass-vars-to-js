@@ -3,37 +3,39 @@ import fs from 'fs';
 
 import collectDeclarations from './_collect-declarations';
 import parseDeclaration from './_parse-declaration';
+import getValueType from './_get-value-type.js';
+
+function message (text) {
+    console.log(text);
+}
 
 function sassVars (filePath) {
     const declarations = collectDeclarations(filePath);
     let variables = {};
 
     if (!declarations.length) {
-        console.log('Warning: Zero declarations found');
+        message('Warning: Zero declarations found');
         return;
     }
 
     declarations.forEach(function (declaration) {
         const parsedDeclaration = parseDeclaration(declaration);
+        const varName = parsedDeclaration.key;
+        let varValue = parsedDeclaration.value;
 
-        variables[parsedDeclaration.key] = parsedDeclaration.value;
+        if (getValueType(varValue) === 'var') {
+            const varName = varValue;
+
+            varValue = variables[varName] || null;
+            if (!varValue) {
+                message(`Warning: Null value for variable $${varName}`);
+            }
+        }
+
+        variables[varName] = varValue;
     });
 
     return variables;
-
-    /*
-
-     const variableRegexp = new RegExp(/(?:\$)([\w-]+)(?:[\s\;]*)/);
-
-     // there's variable used in value
-     // have to parse the value as well
-     if (~val.indexOf('$')) {
-     const innerVar = val.match(variableRegexp)[1];
-     const innerVarValue = vars[innerVar];
-
-     val = val.replace('$' + innerVar, innerVarValue);
-
-     */
 }
 
 export default sassVars;

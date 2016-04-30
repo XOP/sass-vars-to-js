@@ -5,59 +5,59 @@ var getValueType = require('../dist/_get-value-type.js');
 
 test(TEST_NAME, function (t) {
 
-    var value;
+    var values;
 
-    value = '#fff';
+    values = [
+        '#fff'
+    ];
 
     t.ok(
-        getValueType(value),
+        getValueType(values[0]),
 
         'should get result'
     );
 
-    t.equal(
-        getValueType(value),
-        'value',
+    values.forEach(function (value) {
+        t.equal(
+            getValueType(value),
+            'value',
 
-        'should return "value" type'
-    );
+            'should return "value" type'
+        );
+    });
 
-    value = '$color';
+    values = [
+        '$color',
+        '$color-rgba',
+        '$TEXT_TRANSFORM'
+    ];
 
-    t.equal(
-        getValueType(value),
-        'var',
+    values.forEach(function (value) {
+        t.equal(
+            getValueType(value),
+            'var',
 
-        'should return "var" type'
-    );
+            'should return "var" type'
+        );
+    });
 
-    value = '$color-rgba';
+    // TODO: expression type
 
-    t.equal(
-        getValueType(value),
-        'var',
+    values = [
+        '$margin / 2',
+        '$margin * 2',
+        '$margin + $margin',
+        '$margin - $margin'
+    ];
 
-        'should return "var" type'
-    );
+    values.forEach(function (value) {
+        t.notEqual(
+            getValueType(value),
+            'var',
 
-    value = '$TEXT_TRANSFORM';
-
-    t.equal(
-        getValueType(value),
-        'var',
-
-        'should return "var" type'
-    );
-
-    // todo: expression type
-    value = '$margin - $padding';
-
-    t.equal(
-        getValueType(value),
-        'value',
-
-        'should return "var" type'
-    );
+            'should not return "var" type'
+        );
+    });
 
     t.end();
 });

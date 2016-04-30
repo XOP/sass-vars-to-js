@@ -3,11 +3,8 @@ import fs from 'fs';
 
 import collectDeclarations from './_collect-declarations';
 import parseDeclaration from './_parse-declaration';
-import getValueType from './_get-value-type.js';
-
-function message (text) {
-    console.log(text);
-}
+import getValueType from './_get-value-type';
+import getVarValue from './_get-var-value';
 
 function sassVars (filePath) {
     const declarations = collectDeclarations(filePath);
@@ -26,9 +23,10 @@ function sassVars (filePath) {
         if (getValueType(varValue) === 'var') {
             const varName = varValue;
 
-            varValue = variables[varName] || null;
+            varValue = getVarValue(varName, variables);
+
             if (!varValue) {
-                message(`Warning: Null value for variable $${varName}`);
+                message(`Warning: Null value for variable ${varName}`);
             }
         }
 
@@ -36,6 +34,10 @@ function sassVars (filePath) {
     });
 
     return variables;
+}
+
+function message (text) {
+    console.log(text);
 }
 
 export default sassVars;

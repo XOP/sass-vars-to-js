@@ -49,6 +49,8 @@ It returns the object, very similar to the variable definition syntax:
 ```scss
 $color-brand-primary: #1711e2;
 $color-brand-secondary: #fd0f79;
+
+$footer-bg-color: $color-brand-primary;
 ```
 
 **colors.js**
@@ -59,7 +61,8 @@ const variables = converter(path/to/variables.scss);
 
 // {
 //     'color-brand-primary': '#1711e2',
-//     'color-brand-secondary': '#fd0f79'
+//     'color-brand-secondary': '#fd0f79',
+//     'footer-bg-color': '#1711e2'
 // }
 
 const colors = {
@@ -74,7 +77,8 @@ const colors = {
 Please be aware of current version (0.x - 1.x) limitations:
 
 - maps and other complex stuff is not supported
-- variables in variables not supported
+- sass expressions not supported
+- sass functions not supported
 
 
 ## License: [MIT](LICENSE)

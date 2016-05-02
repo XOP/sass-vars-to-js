@@ -2,7 +2,7 @@
 
 > variables.scss to [variables Object] converter
 
-[![npm version](https://badge.fury.io/js/sass-vars-to-js.svg)](https://badge.fury.io/js/sass-vars-to-js) [![npm dependencies](https://david-dm.org/stewiekillsloiss/sass-vars-to-js.svg)](https://david-dm.org/stewiekillsloiss/sass-vars-to-js)
+[![npm version](https://badge.fury.io/js/sass-vars-to-js.svg)](https://badge.fury.io/js/sass-vars-to-js) [![dependencies](https://david-dm.org/XOP/sass-vars-to-js.svg)](https://david-dm.org/stewiekillsloiss/sass-vars-to-js) [![devDependecies](https://david-dm.org/XOP/sass-vars-to-js/dev-status.svg)](https://david-dm.org/XOP/sass-vars-to-js#info=devDependencies)
 
 ## About
 

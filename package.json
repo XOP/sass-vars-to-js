@@ -1,7 +1,7 @@
 {
   "name": "sass-vars-to-js",
   "version": "0.8.1",
-  "description": "",
+  "description": "variables.scss to [variables Object] converter",
   "main": "index.js",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",

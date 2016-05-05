@@ -12,3 +12,9 @@ $offset-step: 10px;
 $offset-n: $offset-step;
 $offset-s: $offset-step/2;
 $offset-l: $offset-step*2;
+
+$a: 100;
+$b: $a;
+$c: $b;
+$d: $c;
+$e: $b;

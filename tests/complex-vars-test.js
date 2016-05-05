@@ -51,6 +51,27 @@ test(TEST_NAME, function (t) {
         'should not return variable value in expression'
     );
 
+    t.equal(
+        result['c'],
+        '100',
+
+        'should return deep linked value (1)'
+    );
+
+    t.equal(
+        result['d'],
+        '100',
+
+        'should return deep linked value (2)'
+    );
+
+    t.equal(
+        result['e'],
+        '100',
+
+        'should return deep linked value (3)'
+    );
+
     // todo: update test
     t.notEqual(
         result['offset-s'],

@@ -4,12 +4,12 @@ import message from './_message.js';
 
 function resolveVarValue (name, values) {
     if (is.undef(values) || is.args.empty(arguments)) {
-        message('Variable cannot be resolved');
+        message('Error: Missing arguments');
         return undefined;
     }
 
     if (!is.string(name) || !is.object(values)) {
-        message('Check arguments type');
+        message('Error: Check arguments type');
         return undefined;
     }
 

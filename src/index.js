@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
+import message from './_message';
 import collectDeclarations from './_collect-declarations';
 import parseDeclaration from './_parse-declaration';
 import getValueType from './_get-value-type';
@@ -34,10 +35,6 @@ function sassVars (filePath) {
     });
 
     return variables;
-}
-
-function message (text) {
-    console.log(text);
 }
 
 export default sassVars;

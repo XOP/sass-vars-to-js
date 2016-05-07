@@ -1,4 +1,4 @@
-import log from '../node_modules/log-util';
+import log from '../../node_modules/log-util';
 
 function message (text) {
     const normalText = text.toLowerCase();

@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-import message from './_message';
+import message from './utils/_message';
 import collectDeclarations from './_collect-declarations';
 import parseDeclaration from './_parse-declaration';
 import getValueType from './_get-value-type';

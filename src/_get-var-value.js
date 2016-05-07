@@ -1,6 +1,6 @@
 import is from '../node_modules/is';
 
-import message from './_message.js';
+import message from './utils/_message.js';
 
 function resolveVarValue (name, values) {
     if (is.undef(values) || is.args.empty(arguments)) {

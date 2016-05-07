@@ -1,12 +1,15 @@
-import path from 'path';
-import fs from 'fs';
-
 import message from './utils/_message';
 import collectDeclarations from './_collect-declarations';
 import parseDeclaration from './_parse-declaration';
 import getValueType from './_get-value-type';
 import getVarValue from './_get-var-value';
 
+/**
+ * Takes file.scss as an argument
+ * Returns parsed variables hash-map
+ * @param filePath
+ * @returns {{}}
+ */
 function sassVars (filePath) {
     const declarations = collectDeclarations(filePath);
     let variables = {};
@@ -18,12 +21,15 @@ function sassVars (filePath) {
 
     declarations.forEach(function (declaration) {
         const parsedDeclaration = parseDeclaration(declaration);
-        const varName = parsedDeclaration.key;
+        let varName = parsedDeclaration.key;
         let varValue = parsedDeclaration.value;
+        const valueType = getValueType(varValue);
 
-        if (getValueType(varValue) === 'var') {
-            const varName = varValue;
-
+        /*
+         * $key: $value;
+         */
+        if (valueType === 'var') {
+            varName = varValue;
             varValue = getVarValue(varName, variables);
 
             if (!varValue) {
@@ -31,6 +37,16 @@ function sassVars (filePath) {
             }
         }
 
+        /*
+         * $key: ($value-1 + $value-2) * $value-3 ... ;
+         */
+        if (valueType === 'expression') {
+            // todo
+        }
+
+        /*
+         * $key: value;
+         */
         variables[varName] = varValue;
     });
 

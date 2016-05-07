@@ -1,6 +1,6 @@
 {
   "name": "sass-vars-to-js",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "variables.scss to [variables Object] converter",
   "main": "index.js",
   "scripts": {

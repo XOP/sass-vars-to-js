@@ -1,5 +1,10 @@
 import log from '../../node_modules/log-util';
 
+/**
+ * Pretty logger
+ * Returns beautified message
+ * @param text
+ */
 function message (text) {
     const normalText = text.toLowerCase();
 

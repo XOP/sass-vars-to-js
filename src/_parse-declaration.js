@@ -1,3 +1,9 @@
+/**
+ * Parses variable declaration
+ * Returns $key: $value pair
+ * @param declaration
+ * @returns {{key: (*|string), value: (*|string)}}
+ */
 function parseDeclaraion (declaration) {
     const keyRegexp = new RegExp(/(?:\$)([\w-]+)(?:[\s\n\r\t])*(?:\:)/);
     const valueRegexp = new RegExp(/(?:\:)(?:[\s\n\r\t])*(.+)(?:[\s\n\r\t])*(?:\;)/);

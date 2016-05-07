@@ -21,7 +21,7 @@ function sassVars (filePath) {
 
     declarations.forEach(function (declaration) {
         const parsedDeclaration = parseDeclaration(declaration);
-        let varName = parsedDeclaration.key;
+        const varName = parsedDeclaration.key;
         let varValue = parsedDeclaration.value;
         const valueType = getValueType(varValue);
 
@@ -29,11 +29,11 @@ function sassVars (filePath) {
          * $key: $value;
          */
         if (valueType === 'var') {
-            varName = varValue;
-            varValue = getVarValue(varName, variables);
+            const localVarName = varValue;
+            varValue = getVarValue(localVarName, variables);
 
             if (!varValue) {
-                message(`Warning: Null value for variable ${varName}`);
+                message(`Warning: Null value for variable ${localVarName}`);
             }
         }
 

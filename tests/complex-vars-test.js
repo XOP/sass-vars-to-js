@@ -7,7 +7,7 @@ var converter = require('../index.js');
 
 test(TEST_NAME, function (t) {
 
-    var sassFilePath = path.resolve(__dirname, TEST_NAME + '.scss');
+    var sassFilePath = path.resolve(__dirname, 'scss', TEST_NAME + '.scss');
     var result = converter(sassFilePath);
 
     t.ok(

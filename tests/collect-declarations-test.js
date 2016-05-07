@@ -7,10 +7,10 @@ var collectDeclarations = require('../dist/_collect-declarations.js');
 
 test(TEST_NAME, function (t) {
 
-    var sassFilePath = path.resolve(__dirname, 'plain-vars.scss');
+    var sassFilePath = path.resolve(__dirname, 'scss', 'plain-vars.scss');
     var result = collectDeclarations(sassFilePath);
 
-    var emptySassFilePath = path.resolve(__dirname, 'no-vars.scss');
+    var emptySassFilePath = path.resolve(__dirname, 'scss', 'no-vars.scss');
     var no_result = collectDeclarations(emptySassFilePath);
 
     t.ok(

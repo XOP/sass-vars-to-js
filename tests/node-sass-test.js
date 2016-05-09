@@ -7,8 +7,11 @@ var sass = require('../node_modules/node-sass');
     FIXME: move to dedicated file
  */
 function extractExpressionValue (css) {
-    var value = css.split('content: ')[1];
-    value = value.split('; }')[0];
+
+    // parse the comment string:
+    // /*varValue*/ --> varValue
+    var valueRegExp = /(?:\/\*)(.+)(?:\*\/)/;
+    var value = css.match(valueRegExp)[1];
 
     return value;
 }
@@ -17,8 +20,11 @@ function extractExpressionValue (css) {
     FIXME: move to dedicated file
  */
 function resolveExpressionValue (varName, scssString) {
+
+    // print the interpolated value in comment string
+    // /*#{$varName}*/ --> /*varValue*/
     var scssContent = scssString + '' +
-        '.' + varName + '{content: ' + '$' + varName + '}';
+        '/*' + '#{$' + varName + '}*/';
 
     var sassResult = sass.renderSync({
         data: scssContent

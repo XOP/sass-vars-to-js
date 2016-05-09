@@ -5,8 +5,8 @@
  * @returns {{key: (*|string), value: (*|string)}}
  */
 function parseDeclaraion (declaration) {
-    const keyRegexp = new RegExp(/(?:\$)([\w-]+)(?:[\s\n\r\t])*(?:\:)/);
-    const valueRegexp = new RegExp(/(?:\:)(?:[\s\n\r\t])*(.+)(?:[\s\n\r\t])*(?:\;)/);
+    const keyRegexp = /(?:\$)([\w-]+)(?:[\s\n\r\t])*(?::)/;
+    const valueRegexp = /(?::)(?:[\s\n\r\t])*(.+)(?:[\s\n\r\t])*(?:;)/;
 
     const matchKey = declaration.match(keyRegexp);
     const key = matchKey[1].trim();

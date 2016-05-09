@@ -1,6 +1,6 @@
 function getValueType (value) {
     let type = 'value';
-    const varNameRegexp = new RegExp(/^\$[\w-]+$/);
+    const varNameRegexp = /^\$[\w-]+$/;
 
     if (varNameRegexp.test(value)) {
         type = 'var';

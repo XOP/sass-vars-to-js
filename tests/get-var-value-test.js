@@ -61,7 +61,7 @@ test(TEST_NAME, function (t) {
 
     name = '$color';
     values = {
-        'background': '#fff'
+        background: '#fff'
     };
 
     t.equal(
@@ -72,9 +72,9 @@ test(TEST_NAME, function (t) {
     );
 
     values = {
-        'background': '#fff',
-        'color': '#000',
-        'font': '12px/1.5 Arial'
+        background: '#fff',
+        color: '#000',
+        font: '12px/1.5 Arial'
     };
 
     t.equal(

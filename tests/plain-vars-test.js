@@ -38,14 +38,14 @@ test(TEST_NAME, function (t) {
     );
 
     t.equal(
-        typeof(result.color),
+        typeof result.color,
         'string',
 
         'should return String for String variable'
     );
 
     t.equal(
-        typeof(result.columns),
+        typeof result.columns,
         'string',
 
         'should return String value for Number variable'

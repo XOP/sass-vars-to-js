@@ -11,7 +11,7 @@ test(TEST_NAME, function (t) {
     var result = collectDeclarations(sassFilePath);
 
     var emptySassFilePath = path.resolve(__dirname, 'scss', 'no-vars.scss');
-    var no_result = collectDeclarations(emptySassFilePath);
+    var noResult = collectDeclarations(emptySassFilePath);
 
     t.ok(
         result,
@@ -20,7 +20,7 @@ test(TEST_NAME, function (t) {
     );
 
     t.equal(
-        no_result,
+        noResult,
         null,
 
         'should get null'

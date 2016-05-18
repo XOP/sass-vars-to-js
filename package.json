@@ -1,13 +1,12 @@
 {
   "name": "sass-vars-to-js",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "variables.scss to [variables Object] converter",
   "main": "index.js",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "babel src --out-dir dist",
     "test": "node tests",
-    "prepublish": "npm run lint && npm run build",
     "precommit": "npm run lint && npm run build && npm test",
     "lint-tests": "eslint tests/",
     "lint": "npm run lint-tests"

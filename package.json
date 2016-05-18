@@ -8,6 +8,7 @@
     "build": "babel src --out-dir dist",
     "test": "node tests",
     "precommit": "npm run lint && npm run build && npm test",
+    "prepublish": "npm run precommit",
     "lint-tests": "eslint tests/",
     "lint": "npm run lint-tests"
   },

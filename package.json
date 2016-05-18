@@ -38,6 +38,7 @@
     "tape": "^4.5.1"
   },
   "dependencies": {
+    "husky": "^0.11.4",
     "node-sass": "^3.7.0"
   }
 }

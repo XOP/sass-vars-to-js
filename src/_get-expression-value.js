@@ -1,7 +1,7 @@
 import path from 'path';
 
-import is from '../node_modules/is';
-import sass from '../node_modules/node-sass';
+import is from 'is';
+import sass from 'node-sass';
 
 import message from './utils/_message.js';
 

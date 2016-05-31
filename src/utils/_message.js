@@ -1,4 +1,4 @@
-import log from '../../node_modules/log-util';
+import log from 'log-util';
 
 /**
  * Pretty logger

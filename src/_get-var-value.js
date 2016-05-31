@@ -1,4 +1,4 @@
-import is from '../node_modules/is';
+import is from 'is';
 
 import message from './utils/_message.js';
 

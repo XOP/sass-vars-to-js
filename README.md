@@ -10,6 +10,13 @@ Sometimes you just need to use SASS variables in JS without incorporating comple
 And no CSS-module-specific logic behind this.
 
 
+### Important
+
+**Not actively maintained**
+
+If you want to cooperate or even adopt the project, please [let me know](mailto:stewiekillsloiss@gmail.com).
+
+
 ## Installation and Changes
 
 Installation is straightforward:
